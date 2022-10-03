@@ -46,9 +46,9 @@ static const unsigned int alphas[][3] = {
 };
 
 /* tagging */
-/* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; 
 /* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
-static const char *tags[] = { "dev", "www", "sys", "doc", "vbox", "chat", "mus", "vid", "gfx" };
+/* static const char *tags[] = { "dev", "www", "sys", "doc", "vbox", "chat", "mus", "vid", "gfx" }; */
 
 static const Rule rules[] = {
 	/* xprop(1):
