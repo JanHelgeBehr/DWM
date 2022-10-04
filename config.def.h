@@ -143,8 +143,8 @@ static Keychord keychords[] = {
 	{2, {{MODKEY, XK_e}, {0, XK_w}},      spawn,         SHCMD("emacsclient -c -a 'emacs' --eval '(doom/window-maximize-buffer(eww \"distro.tube\"))'") },
 
     /* Web browsers */
-    {1, {{MODKEY, XK_b}},                 spawn,         SHCMD("qutebrowser") },
-    {1, {{MODKEY|Mod1Mask, XK_s}},        spawn,         SHCMD("librewolf") },
+    {1, {{MODKEY, XK_r}},                 spawn,         SHCMD("qutebrowser") },
+    {1, {{MODKEY|Mod1Mask, XK_b}},        spawn,         SHCMD("librewolf") },
 
     /* rofi */
     {1, {{MODKEY, XK_b}},                 spawn,         SHCMD("rofi-bangs") },
