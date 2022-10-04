@@ -144,7 +144,7 @@ static Keychord keychords[] = {
 
     /* Web browsers */
     {1, {{MODKEY, XK_b}},                 spawn,         SHCMD("qutebrowser") },
-    {1, {{MODKEY|Mod1Mask, XK_b}},        spawn,         SHCMD("librewolf") },
+    {1, {{MODKEY|ShiftMask, XK_b}},        spawn,         SHCMD("librewolf") },
 
     /* rofi */
     {1, {{MODKEY, XK_r}},                 spawn,         SHCMD("rofi-bangs") },
