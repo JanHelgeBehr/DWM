@@ -38,6 +38,8 @@ static const char *colors[][3]        = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_3, col_1, col_2 },
 	[SchemeSel]  = { col_3, col_4, col_4 },
+	[SchemeWarn] =	 { col_3, col_3, col_3 },
+        [SchemeUrgent]=	 { col_3, col_3, col_3 }
 };
 static const unsigned int alphas[][3] = {
 	/*               fg      bg        border     */
