@@ -26,6 +26,10 @@ static const char col_1[]  = "#282c34"; /* background color of bar */
 static const char col_2[]  = "#282c34"; /* border color unfocused windows */
 static const char col_3[]  = "#d7d7d7";
 static const char col_4[]  = "#924441"; /* border color focused windows and tags */
+static const char col5[]   = "#ff0000"; /*red */
+static const char col6[]   = "#B08904"; /*yellow*/
+static const char col7[]  = "#00FF00"; /*green*/
+
 /* bar opacity
  * 0xff is no transparency.
  * 0xee adds wee bit of transparency.
@@ -38,8 +42,9 @@ static const char *colors[][3]        = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_3, col_1, col_2 },
 	[SchemeSel]  = { col_3, col_4, col_4 },
-	[SchemeWarn] =	 { col_3, col_3, col_3 },
-        [SchemeUrgent]=	 { col_3, col_3, col_3 }
+        [SchemeWarnRed] = { col_5, col_1, col_2 },
+	[SchemeWarnYellow] = { col_6, col_1, col_2 },
+        [SchemeWarnGreen]= { col_7, col_1, col_2 }
 };
 static const unsigned int alphas[][3] = {
 	/*               fg      bg        border     */
