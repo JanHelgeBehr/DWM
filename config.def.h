@@ -7,8 +7,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 6;        /* gaps between windows */
+static const unsigned int borderpx  = 5;        /* border pixel of windows */
+static const unsigned int gappx     = 20;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -18,14 +18,18 @@ static const int vertpadbar         = 7;        /* vertical padding for statusba
  * Otherwise, your default font will be Hack (ttf-hack)
  * JoyPixels (ttf-joypixels) is a dependency for colored fonts and emojis.
  */
-static const char *fonts[]     = {"Ubuntu:weight=bold:size=8:antialias=true:hinting=true",
-                                  "Hack:size=8:antialias=true:autohint=true",
-                                  "JoyPixels:size=10:antialias=true:autohint=true"
+static const char *fonts[]     = {"Ubuntu:weight=bold:size=16:antialias=true:hinting=true",
+                                  "Hack:size=16:antialias=true:autohint=true",
+                                  "JoyPixels:size=18:antialias=true:autohint=true"
 						     	};
 static const char col_1[]  = "#282c34"; /* background color of bar */
 static const char col_2[]  = "#282c34"; /* border color unfocused windows */
 static const char col_3[]  = "#d7d7d7";
 static const char col_4[]  = "#924441"; /* border color focused windows and tags */
+static const char col_5[]   = "#ff0000"; /*red */
+static const char col_6[]   = "#B08904"; /*yellow*/
+static const char col_7[]  = "#00FF00"; /*green*/
+
 /* bar opacity
  * 0xff is no transparency.
  * 0xee adds wee bit of transparency.
@@ -38,6 +42,9 @@ static const char *colors[][3]        = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_3, col_1, col_2 },
 	[SchemeSel]  = { col_3, col_4, col_4 },
+        [SchemeWarnRed] = { col_5, col_1, col_2 },
+	[SchemeWarnYellow] = { col_6, col_1, col_2 },
+        [SchemeWarnGreen]= { col_7, col_1, col_2 }
 };
 static const unsigned int alphas[][3] = {
 	/*               fg      bg        border     */
@@ -56,8 +63,29 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Lutris",             NULL,           NULL,           1<< 8,                0,      -1 },
+        { "Steam",              NULL,           NULL,           1<< 8,                1,      -1 },
+ 	{ NULL,              NULL,           "XCOM 2",           1<< 7,                1,      -1 },
+        { "vlc",                NULL,           NULL,           0,                    1,      -1 },
+        { "Lxappearance",       NULL,           NULL,           0,                    1,      -1 },
+        { "QtPass",             NULL,           NULL,           0,                    1,      -1 },
+        { "arandr",             NULL,           NULL,           0,                    1,      -1 },
+        { "Gimp",               NULL,           NULL,           0,                    1,      -1 },
+        { "libreoffice",        NULL,           NULL,           1<<5,                 0,      -1 },
+	{ "alacritty",          "shellcaster",	NULL,  		1<<3,                 0,      1 },
+        { "alacritty",          "irssi",	NULL,        	1<<4,                 0,      1 },
+        { "alacritty",          "shellcast",   	NULL, 		1<<4,                 0,      0 },
+        { "alacritty",          "ncmpcpp",      NULL,		1<<6,                 0,      0 },
+        { "alacritty",          "calcurs",      NULL,		1<<3,                 0,      -1 },
+        { "alacritty",          "neomutt",      NULL,      	1<<3,                 0,      -1 },
+        { "Firefox",            NULL,           NULL,           1 << 1,               0,      -1 },
+        { "RStudio",            NULL,           NULL,           1 << 7,               0,      -1 },
+        { NULL,                 NULL,           "Kodi",         1 << 7,               0,      1 },
+        { NULL,                 NULL,           "spotify",      1 << 7,               0,      0 },
+        { "dolphin",            NULL,           NULL,           1 << 7,               0,      -1 },
+        { "mpv",                NULL,           NULL,           1 << 6,               0,      -1 },
+        { "HandBrake",          NULL,           NULL,           1 << 7,               0,      -1 },
+        { "Wine",               NULL,           NULL,           1 << 7,               0,      0 },
 };
 
 /* layout(s) */
@@ -123,9 +151,10 @@ static Keychord keychords[] = {
 
     /* Web browsers */
     {1, {{MODKEY, XK_b}},                 spawn,         SHCMD("qutebrowser") },
-    {1, {{MODKEY|Mod1Mask, XK_s}},        spawn,         SHCMD("tabbed -r 2 surf -pe x '.surf/html/homepage.html'") },
+    {1, {{MODKEY|ShiftMask, XK_b}},        spawn,         SHCMD("librewolf") },
 
-
+    /* rofi */
+    {1, {{MODKEY, XK_r}},                 spawn,         SHCMD("rofi-bangs") },
 	{1, {{MODKEY, XK_b}},				  togglebar,      {0} },
 	{1, {{MODKEY, XK_j}},				  focusstack,     {.i = +1 } },
 	{1, {{MODKEY, XK_k}},				  focusstack,     {.i = -1 } },
