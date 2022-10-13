@@ -26,9 +26,9 @@ static const char col_1[]  = "#282c34"; /* background color of bar */
 static const char col_2[]  = "#282c34"; /* border color unfocused windows */
 static const char col_3[]  = "#d7d7d7";
 static const char col_4[]  = "#924441"; /* border color focused windows and tags */
-static const char col5[]   = "#ff0000"; /*red */
-static const char col6[]   = "#B08904"; /*yellow*/
-static const char col7[]  = "#00FF00"; /*green*/
+static const char col_5[]   = "#ff0000"; /*red */
+static const char col_6[]   = "#B08904"; /*yellow*/
+static const char col_7[]  = "#00FF00"; /*green*/
 
 /* bar opacity
  * 0xff is no transparency.
