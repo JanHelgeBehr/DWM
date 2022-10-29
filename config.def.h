@@ -185,6 +185,10 @@ static Keychord keychords[] = {
 	{1, {{MODKEY|ShiftMask, XK_space}},	  togglefloating, {0} },
 	{1, {{MODKEY, XK_0}},				  view,           {.ui = ~0 } },
 	{1, {{MODKEY|ShiftMask, XK_0}},		  tag,            {.ui = ~0 } },
+	
+	/* ### F Keys ### */
+	{1, {{MODKEY,	XK_F12}},		spawn,		SHCMD("changeWallpaper") },
+
 
     /* Switching between monitors */
 	{1, {{MODKEY, XK_comma}},			  focusmon,       {.i = -1 } },
