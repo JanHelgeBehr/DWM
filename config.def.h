@@ -169,10 +169,9 @@ static Keychord keychords[] = {
 
 	/* ### Audio control ###*/
 	{1,{{ MODKEY,	XK_minus}},		spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
-	{1,{{ MODKEY|ShiftMask,	XK_minus}},	spawn,		SHCMD("pamixer --allow-boost -d 15; kill -44 $(pidof dwmblocks)") },
+	{1,{{ MODKEY|ShiftMask,	XK_minus}},	spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{1,{{ MODKEY,	XK_equal}},		spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
-	{1,{{ MODKEY|ShiftMask,	XK_equal}},	spawn,		SHCMD("pamixer --allow-boost -i 15; kill -44 $(pidof dwmblocks)") },
-	{1,{{ MODKEY,	XK_M}},	spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
+	{1,{{ MODKEY|ShiftMask,	XK_equal}},	spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	
     /* Layout manipulation */
 	{1, {{MODKEY, XK_Tab}},				  cyclelayout,    {.i = -1 } },
