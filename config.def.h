@@ -167,6 +167,10 @@ static Keychord keychords[] = {
 	{1, {{MODKEY, XK_Return}},			  zoom,           {0} },
 	{1, {{MODKEY, XK_Tab}},				  view,           {0} },
 
+	/* ### Audio control ###*/
+	{1,{{ MODKEY,	XK_minus}},	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
+
+	
     /* Layout manipulation */
 	{1, {{MODKEY, XK_Tab}},				  cyclelayout,    {.i = -1 } },
 	{1, {{MODKEY|ShiftMask, XK_Tab}},		  cyclelayout,    {.i = +1 } },
